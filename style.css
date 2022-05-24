@@ -1,5 +1,5 @@
 body {
-    min-height: 20vh;
+    min-height: 30vh;
     display: flex;
     flex-direction: column;
     background-color: #3b7ab4;
@@ -25,10 +25,21 @@ body {
 
 }
 
-.scoreboard{
+.points{
   display: flex;
   flex-direction: row;
   gap: 20px;
+ 
+}
+
+.scoreboard{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: purple ;
+  color: white;
+  padding: 10px;
 }
 
 .choices{

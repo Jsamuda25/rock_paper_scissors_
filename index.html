@@ -1,98 +1,59 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>Practice</title>
-  <style>
-  </style>
-</head>
-<body>
-  <script>
-
-    function computerPlay(){
-      let comp_hand = Math.floor(Math.random() * 3) + 1;
-      let comp_object = "rock";
-
-      if(comp_hand === 1) {
-        comp_object="rock";
-      }
-
-      else if(comp_hand=== 2){
-        comp_object = "paper";
-      }
-
-      else{
-        comp_object = "scissors";
-      }
-
-      return comp_object;
-    }
-
-    //computer = computerPlay();
-    //let user_choice = (prompt ("Enter your choice:")).toLowerCase;
-
-    function playRound (computer , user_choice){
-
+  <head>
+    <meta charset="utf-8">
+    <title>Rock, Paper, Scissors</title>
+    <link rel="stylesheet" href="style.css">
+   
+  </head>
+  <div id="wrapper">
+  <body>
     
-        let result;
+    <h3 id="heading"><strong><em> First to Five: Rock-Paper-Scissors</em></strong></h3>
+    <div class = "button-container">
+      
+      <div class="box-container">
+        <div class="box">
+          <div class="rock" div id="rock-pic"><img src="img/rock.jpg" alt="Rock"></div>
+          <div id="button"><button id="rock">Rock</button></div>
+        </div>
 
-        if(user_choice === computer){
-            result = "Tie!";
-        }
+        <div class="box">
+          <div class="paper" div id="paper-pic"><img src="img/paper.jpg" alt="Paper"></div>
+          <div id="button"><button id="paper">Paper</button></div>
+        </div>
 
-        else if(user_choice === "rock" && computer === "paper"){
-            result = "You lose!";
-        }
+        <div class="box">
+          <div class="scissors" div id="scissors-pic"><img src="img/scissors.jpg" alt="Scissors"></div>
+          <div id="button"><button id="scissors">Scissors</button></div>
+        </div>
 
-        else if(user_choice === "paper" && computer === "rock"){
-            result = "You win!";
-        }
+      </div>
+    </div>
 
-        else if(user_choice === "paper" && computer === "scissors"){
-            result = "You lose!";
-        }
+    <div class ="game-components">
+      <div id="result">Round result: N/A </div>
 
-        else if(user_choice === "scissors" && computer === "paper"){
-            result = "You win!";
-        }
+      <div class ="choices">
+        <div id="user-choice">You chose: N/A</div>
+        <div id="comp-choice">CPU chose: N/A</div>
+      </div>
 
-        else if(user_choice === "scissors" && computer === "rock"){
-            result = "You lose!";
-        }
+      <div class="scoreboard">
+        <div id ="score"><em>Score</em></div>
+        <div class="points">
+          <div id="user-score">You: 0</div>
+          <div id="computer-score">Computer: 0</div>
+        </div>
+      </div>
 
-        else{
-        
-        }
+      <div id="game"></div>
+      <div id="button"><button id="reset">Reset</button></div>
+    </div>
 
-        return result;
+   
+    <script src="script.js"></script>
 
-    }
-
-
-
-    function game(){
-        console.log("Let's play rock, paper, scissors!");
-    
-        for(let i = 0; i<5 ; i++){
-            let choice = window.prompt("Enter your choice:");
-            let user = choice.toLowerCase();
-            if (user!= "rock" && user!="scissors" && user!="paper"){
-                console.log("Wrong input.");
-            }
-            else{
-            let computer = computerPlay();
-            console.log("THE CPU chose " + computer); 
-            console.log(playRound(computer, user));
-            }
-        }
-    }
-    
-    game();
-
-    
-    
-
-
-  </script>
-</body>
+  </body>
+  </div>
 </html>

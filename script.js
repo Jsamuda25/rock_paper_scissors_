@@ -12,6 +12,7 @@ let round_result = document.getElementById("result");
 let comp_choice = document.getElementById("comp-choice");
 let user= document.getElementById("user-choice");
 let match = document.getElementById("game");
+let reset = document.getElementById("reset");
 
 function computerPlay(){
     let comp_hand = Math.floor(Math.random() * 3) + 1;
@@ -35,40 +36,31 @@ function computerPlay(){
 
 function playRound (computer, user_choice){
     let result;
-
     if(user_choice === computer){
         result = "Tie!";
     }
-
     else if(user_choice === "rock" && computer === "paper"){
         result = "You lose!";
     }
-
     else if(user_choice === "rock" && computer === "scissors"){
         result = "You win!";
     }
-
     else if(user_choice === "paper" && computer === "rock"){
         result = "You win!";
     }
-
     else if(user_choice === "paper" && computer === "scissors"){
         result = "You lose!";
     }
-
     else if(user_choice === "scissors" && computer === "paper"){
         result = "You win!";
     }
-
     else if(user_choice === "scissors" && computer === "rock"){
         result = "You lose!";
     }
-
     else{
        
     }
     return result;
-
 }
 
  
@@ -95,12 +87,14 @@ function rock_btn(){
     comp.innerHTML = "Computer: " + computer_score;
     if(computer_score === 5 && user_score < 5){
         match.innerHTML = "Game over: You lose!"
+        match.style.backgroundColor = "yellow";
         computer_score = 0;
         user_score =0 ;
     }
 
     else if(user_score === 5 && computer_score <5 ){
         match.innerHTML = "Game over: You win!"
+        match.style.backgroundColor = "yellow";
         computer_score = 0;
         user_score =0 ;
     }
@@ -112,8 +106,6 @@ function rock_btn(){
 }
 
 function paper_btn(){
-
-
     let computer = computerPlay();
     comp_choice.innerHTML = "CPU chose: "  + computer;
     let user_choice = "paper";
@@ -134,15 +126,16 @@ function paper_btn(){
 
     if(computer_score === 5 && user_score < 5){
         match.innerHTML = "Game over: You lose!"
+        match.style.backgroundColor = "yellow";
         computer_score = 0;
         user_score =0 ;
     }
 
     else if(user_score === 5 && computer_score <5 ){
         match.innerHTML = "Game over: You win!"
+        match.style.backgroundColor = "yellow";
         computer_score = 0;
         user_score =0 ;
-       
     }
 
     else{
@@ -151,11 +144,7 @@ function paper_btn(){
     }
 }
 
-
 function scissor_btn(){
-
-
-
     let computer = computerPlay();
     comp_choice.innerHTML = "CPU chose: "  + computer;
     let user_choice = "scissors";
@@ -177,36 +166,45 @@ function scissor_btn(){
 
     if(computer_score === 5 && user_score < 5){
         match.innerHTML = "Game over: You lose!"
+        match.style.backgroundColor = "yellow";
         computer_score = 0;
         user_score =0 ;
     }
 
     else if(user_score === 5 && computer_score <5 ){
         match.innerHTML = "Game over: You win!"
+        match.style.backgroundColor = "yellow";
         computer_score = 0;
         user_score =0 ;
     }
 
     else{
-        match.innerHTML = ""
-
+        match.innerHTML = "";
     }
        
 }
 
+function reset_btn(){
+    computer_score = 0;
+    user_score =0 ;
+    match.innerHTML = ""
+    you.innerHTML = "You: 0";
+    comp.innerHTML = "Computer: 0" ;
+    comp_choice.innerHTML = "CPU chose: N/A";
+    user.innerHTML = "You chose: N/A"; 
+    round_result.innerHTML = "Round result: N/A";
+}
+
 
 function game(){
-
-
     rock.onclick = rock_btn;
     scissors.onclick = scissor_btn;
     paper.onclick = paper_btn;
-
-
-
+    reset.onclick = reset_btn;
   }
   
   game();
 
-  
+  alert("Rules: \n 1. This game is based on the user vs. the CPU. \n 2. The first player to 5 points wins. \n 3. Clicking the rock, paper, or scissors button will trigger a round." 
+  +"\n 4. Pressing the reset button restarts the game.");
   
