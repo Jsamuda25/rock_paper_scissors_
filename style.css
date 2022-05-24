@@ -1,0 +1,70 @@
+body {
+    min-height: 20vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #3b7ab4;
+   
+  }
+
+.game-components{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.button-container{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+    gap: 70px;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.scoreboard{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.choices{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.box-container{
+  display: flex;
+  flex-direction: row;
+}
+
+.box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+img{
+  height:100px;
+  width: 75px;
+  gap:20px;
+}
+
+#heading{
+  justify-self: center;
+  align-self: center;
+}
+
+#wrapper{
+  margin-left:auto;
+  margin-right: auto;
+  width: max-content;
+  height: max-content;
+
+}
